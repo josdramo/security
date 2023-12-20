@@ -10,6 +10,12 @@ const dotenv = require('dotenv');
 /* CARGA DE DATOS DE CONFIGURACION EN MEMORIA */
 dotenv.config();
 
+/* REFERENCIA AL MÓDULO */
+const swaggerUi = require('swagger-ui-express')
+
+/* REFERENCIA AL ARCHIVO GENERADO */
+const swaggerFile = require('./swagger_output.json')
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -27,6 +33,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+/* CONFIGURACIÓN DE LA RUTA A LA DOCUMENTACIÓN */
+app.use('/documentation', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
