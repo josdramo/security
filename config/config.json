@@ -15,9 +15,10 @@
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "password": "g35c3bFGB16b6dDg1A2aAaFaFeA6cAbh",
+    "database": "railway",
+    "host": "roundhouse.proxy.rlwy.net",
+    "dialect": "mysql",
+    "port": "51357"
   }
 }
